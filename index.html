@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DreamLight Journal - A personal Christian blog with dreamcore aesthetics for sharing testimonies, journal entries, and dreams" />
+    <title>Spy Club</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #00ff00;
+            font-family: "Courier New", Courier, monospace;
+            margin: 20px;
+            line-height: 1.4;
+        }
+        h1, h2, h3 { color: #00ff00; }
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 36px;
+            animation: glow 1.5s infinite alternate;
+            padding: 10px;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+            }
+            to {
+                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+            }
+        }
+        a {
+            color: #00ffff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #ffffff;
+        }
+        .table_base {
+            width: 100%;
+            border: 1px solid #00ff00;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        .table_base .table-title {
+            background-color: #003300;
+            padding: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .blink {
+            animation: blink-animation 1s steps(5, start) infinite;
+        }
+        @keyframes blink-animation {
+            to { visibility: hidden; }
+        }
+        .table_menu {
+            width: 100%;
+            border: 1px solid #00ff00;
+            border-collapse: collapse;
+        }
+        .table_menu td {
+            padding: 8px;
+            border-bottom: 1px solid #004400;
+        }
+        .table_menu .table-title {
+            background-color: #003300;
+            padding: 5px;
+            font-weight: bold;
+            text-align: center;
+            color: #00ff00;
+        }
+        .table_menu .menu-col {
+            width: 150px;
+            font-weight: bold;
+        }
+        .table_update {
+            width: 100%;
+            border: 1px solid #00ff00;
+            border-collapse: collapse;
+        }
+        .table_update td {
+            padding: 8px;
+            border-bottom: 1px solid #004400;
+        }
+        .table_update .table-title {
+            background-color: #003300;
+            padding: 5px;
+            font-weight: bold;
+            text-align: center;
+            color: #00ff00;
+        }
+        .table_update .new { color: #ff0000; width: 100px; }
+        .table_update .next { color: #ffff00; width: 100px; }
+        .table_update .old { color: #888888; width: 100px; }
+        .table_update .journal, .table_menu .journal { width: 120px; color: #00ff00; }
+        .table_update .dreams, .table_menu .dreams { width: 120px; color: #00ffaa; }
+        .table_update .testimonies, .table_menu .testimonies { width: 120px; color: #aaffaa; }
+        .counter {
+            text-align: center;
+            margin: 20px 0;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 20px;
+            color: #00ff00;
+            border: 1px dashed #00ff00;
+            padding: 5px;
+            background-color: #001100;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #999999;
+            border-top: 1px solid #333333;
+            padding-top: 20px;
+        }
+        .ascii {
+            white-space: pre;
+            line-height: 1.2;
+            font-family: monospace;
+            text-align: center;
+            color: #00ff00;
+            margin: 20px 0;
+        }
+        .ascii h1, .ascii h2 {
+            font-weight: bold;
+            outline: 2px solid rgba(14, 14, 14, 0.014);
+            outline-offset: 4px;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 6px;
+        }
+        .ascii h2 {
+            text-decoration: underline;
+        }
+        footer a.inspired {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <img src="D:\Master Folder\Website\folder_01\index_pics\eyesbackground.gif" alt="Animated GIF" style="width: 812px; height: 300px;" />
+    </div>
+    <div class="ascii">
+
+    <h1>𝑀𝓎 𝒶𝓃𝑜𝓃𝓎𝓂𝑜𝓊𝓈 𝑒𝓃𝓉𝓇𝒾𝑒𝓈</h1>
+    <h2>[𝓂𝒶𝒾𝓃𝓁𝓎 𝒻𝑜𝓇 <i>𝒞𝒽𝓇𝒾𝓈𝓉</i>]</h2>
+        <img src="D:\Master Folder\Website\folder_01\index_pics\welcomesign.jpg" alt="Welcome Sign" style="width: 375px; height: auto;" />
+    </div>
+    <table class="table_base">
+        <tr>
+            <td>
+                <span class="blink">★</span> Welcome to my semi-annonymous website <span class="blink">★</span><br />
+                <span style="color: lightgreen;">
+                </span>
+            </td>
+        </tr>
+    </table>
+    <div class="counter">
+        Visitors: <span id="visitor-count">1388</span>
+    </div>
+    <table class="table_update">
+        <tr>
+            <td class="table-title" colspan="3">Recent Updates</td>
+        </tr>
+        <tr>
+            <td class="new">05/24/2025</td>
+            <td class="testimonies">News</td>
+            <td><a href="folder_01/news/news01.html">Why I'm making this website</a></td>
+        </tr>
+        <tr>
+            <td class="next">00/00/0000</td>
+            <td class="dreams">Other</td>
+            <td><a href="entry2.html">Coming soon...</a></td>
+        </tr>
+        <tr>
+            <td class="old">00/00/0000</td>
+            <td class="journal">Other</td>
+            <td><a href="entry3.html">Coming soon...</a></td>
+        </tr>
+        <tr>
+            <td class="old">00/00/0000</td>
+            <td class="journal">Other</td>
+            <td><a href="entry4.html">Coming soon...</a></td>
+        </tr>
+    </table>
+    <br />
+    <table class="table_menu">
+        <tr>
+            <td class="table-title" colspan="3">Menu</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="menu-col"><a href="api/categories/testimonies/entries">Testimonies</a></td>
+            <td>Stories of faith and divine intervention in my life</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="menu-col"><a href="api/categories/journal/entries">Articles</a></td>
+            <td>Daily reflections and thoughts on spiritual growth</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="menu-col"><a href="api/categories/dreams/entries">Dreams</a></td>
+            <td>Interpretation and spiritual meaning of significant dreams</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="menu-col"><a href="api/categories/inspirations/entries">Things I find interesting</a></td>
+            <td>Things that spark joy and wonder in my spiritual journey</td>
+        </tr>
+    </table>
+    <br />
+
+    <table class="table_base">
+        <tr>
+            <td class="table-title">about this site</td>
+        </tr>
+        <tr>
+            <td>
+                Welcome to my digital sanctuary—a personal Christian blog where faith meets dreamcore aesthetics. 
+                This space is dedicated to sharing spiritual journeys, divine encounters, and the mysterious ways 
+                God works in our lives. Here you'll find:
+                <ul>
+                    <li><a href="api/categories/beliefs/entries" style="color: rgb(255, 0, 0);">What I believe in</a>   +    +    <a href="api/categories/beliefs/entries" style="color: rgb(0, 4, 255);">My testimony</a> </li>
+                    <li>Personal testimonies of faith and divine intervention</li>
+                    <li>Spiritual reflections and growth insights</li>
+                    <li>Random Dreams, thoughts, and experiences</li>
+                    <li>Content that inspires wonder and spiritual awakening</li>
+                    <li>A retro aesthetic that honors early web design</li>
+                </ul>
+                <span style="color: yellow;">
+                    This site is a living testimony, constantly evolving as I document my spiritual journey 
+                    and share the light I've found in Christ.
+                </span>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table class="table_base">
+        <tr>
+            <td class="table-title">Current Fav Scripture</td>
+        </tr>
+        <tr>
+            <td>
+                <p style="color: aquamarine;">
+                    John 3:36 Whoever believes in the Son has eternal life, but whoever rejects the Son will not see
+                    life, for God’s wrath remains on them.
+                </p>
+            </td>
+        </tr>
+    </table>
+    <footer>
+        <p>
+            © 2025-2025 |
+            <a href="mailto:pxavierpriv2006@proton.me">Contact</a>
+            <a href="/folder_01/bottom_links/supportme.html">Support-Me</a>
+            <a href="https://alf-s-room.com/" class="inspired">Inspired From</a>
+        </p>
+    </footer>
+    <script>
+        // Simple visitor counter that increments each time
+        let count = localStorage.getItem("visitorCount") || 244;
+        count = parseInt(count) + 1;
+        localStorage.setItem("visitorCount", count);
+        document.getElementById("visitor-count").textContent = count;
+    </script>
+</body>
+</html>

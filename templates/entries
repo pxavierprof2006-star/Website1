@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>5/24/2025</title>
+  <style>
+    body {
+      background-color: black;
+      color: lime;
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Date</h1>
+
+  <p>paragraph here</p>
+
+
+</body>
+
+</html>
