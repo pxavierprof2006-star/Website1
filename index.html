@@ -1,182 +1,325 @@
 <!doctype html>
+<!-- This tells the browser this is an HTML5 document (the latest version of HTML) -->
+
 <html lang="en">
+<!-- This is the opening tag for the entire webpage. "lang=en" means the page is in English -->
+
 <head>
+<!-- The HEAD section contains information ABOUT the webpage that visitors don't see directly -->
+<!-- This includes the title, styling instructions, and metadata -->
+
     <meta charset="UTF-8" />
+    <!-- This tells the browser what character encoding to use (so special characters display correctly) -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- This makes the website work properly on mobile phones and tablets -->
+    <!-- It tells mobile browsers to make the page fit the screen width -->
+    
     <meta name="description" content="DreamLight Journal - A personal Christian blog with dreamcore aesthetics for sharing testimonies, journal entries, and dreams" />
-    <title>Spy Club</title>
+    <!-- This description shows up when someone searches for your website on Google -->
+    
+    <title>XS-Testimony</title>
+    <!-- This is the text that appears in the browser tab at the top of the window -->
+    
     <style>
+    /* The STYLE section contains all the visual design instructions for the webpage */
+    /* This is where we tell the browser what colors, fonts, sizes, and animations to use */
         body {
-            background-color: #000000;
-            color: #00ff00;
-            font-family: "Courier New", Courier, monospace;
-            margin: 20px;
-            line-height: 1.4;
+            /* This styles the entire body (main content area) of the webpage */
+            background-color: #000000;  /* Sets background to black (000000 is black in hex code) */
+            color: #00ff00;  /* Sets text color to bright green (00ff00 is green in hex code) */
+            font-family: "Courier New", Courier, monospace;  /* Uses a typewriter-style font */
+            margin: 20px;  /* Adds 20 pixels of space around the edges of the page */
+            line-height: 1.4;  /* Makes lines of text slightly more spaced apart for easier reading */
+            position: relative;  /* Allows pseudo-elements to be positioned relative to body */
         }
+        
+        body::before {
+            /* Creates a pseudo-element that acts as the background layer */
+            content: "";  /* Required for pseudo-elements to display */
+            position: fixed;  /* Fixed position so it stays in place when scrolling */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("folder_01/index_pics/eyesbackground.gif");  /* Sets the animated GIF as background */
+            background-size: cover;  /* Makes the image cover the entire area */
+            background-position: center;  /* Centers the image */
+            background-repeat: no-repeat;  /* Prevents the image from repeating */
+            opacity: 0.125;  /* Sets opacity to 15% */
+            z-index: -1;  /* Places it behind all other content */
+        }
+        
         h1, h2, h3 { color: #00ff00; }
+        /* This makes all heading text (h1, h2, h3) bright green */
+        
         .title {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 36px;
-            animation: glow 1.5s infinite alternate;
-            padding: 10px;
+            /* This styles elements with the class "title" (like your main title) */
+            text-align: center;  /* Centers the text horizontally */
+            margin-bottom: 20px;  /* Adds 20 pixels of space below the title */
+            font-size: 36px;  /* Makes the text 36 pixels tall (pretty large) */
+            animation: glow 1.5s infinite alternate;  /* Makes the text glow and pulse using the animation below */
+            padding: 10px;  /* Adds 10 pixels of space inside the title box */
         }
+        
         @keyframes glow {
+            /* This creates an animation called "glow" that makes text appear to glow */
             from {
+                /* Starting state: subtle green glow */
                 text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+                /* text-shadow creates a glow effect around text */
             }
             to {
+                /* Ending state: brighter, larger green glow */
                 text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
             }
+            /* The animation goes back and forth between "from" and "to" states */
         }
+        
         a {
-            color: #00ffff;
-            text-decoration: none;
+            /* This styles all links (clickable text) */
+            color: #00ffff;  /* Makes links cyan (bright blue-green) */
+            text-decoration: none;  /* Removes the underline from links */
         }
+        
         a:hover {
-            text-decoration: underline;
-            color: #ffffff;
+            /* This styles links when you move your mouse over them */
+            text-decoration: underline;  /* Adds an underline when you hover */
+            color: #ffffff;  /* Changes color to white when you hover */
         }
         .table_base {
-            width: 100%;
-            border: 1px solid #00ff00;
-            margin-bottom: 15px;
-            padding: 10px;
+            /* This styles elements with the class "table_base" (the basic table boxes) */
+            width: 100%;  /* Makes the table take up the full width of the page */
+            border: 1px solid #00ff00;  /* Adds a 1-pixel green border around the table */
+            margin-bottom: 15px;  /* Adds 15 pixels of space below the table */
+            padding: 10px;  /* Adds 10 pixels of space inside the table */
         }
+        
         .table_base .table-title {
-            background-color: #003300;
-            padding: 5px;
-            font-weight: bold;
-            text-align: center;
+            /* This styles table titles inside .table_base elements */
+            background-color: #003300;  /* Dark green background for the title bar */
+            padding: 5px;  /* Adds 5 pixels of space inside the title */
+            font-weight: bold;  /* Makes the text bold (thicker) */
+            text-align: center;  /* Centers the text */
         }
+        
         .blink {
+            /* This styles elements with the class "blink" (like the star symbols ★) */
             animation: blink-animation 1s steps(5, start) infinite;
+            /* Makes elements blink on and off repeatedly */
+            /* "1s" means 1 second per blink cycle */
+            /* "infinite" means it never stops blinking */
         }
+        
         @keyframes blink-animation {
+            /* This creates the blinking animation */
             to { visibility: hidden; }
+            /* Makes the element disappear completely at the end of each blink */
         }
         .table_menu {
-            width: 100%;
-            border: 1px solid #00ff00;
-            border-collapse: collapse;
+            /* This styles the menu table */
+            width: 100%;  /* Makes it full width */
+            border: 1px solid #00ff00;  /* Green border */
+            border-collapse: collapse;  /* Merges borders between cells so they touch */
         }
+        
         .table_menu td {
-            padding: 8px;
-            border-bottom: 1px solid #004400;
+            /* This styles each cell (td = table data) in the menu table */
+            padding: 8px;  /* Adds 8 pixels of space inside each cell */
+            border-bottom: 1px solid #004400;  /* Adds a dark green line under each row */
         }
+        
         .table_menu .table-title {
-            background-color: #003300;
-            padding: 5px;
-            font-weight: bold;
-            text-align: center;
-            color: #00ff00;
+            /* Styles the title row in the menu table */
+            background-color: #003300;  /* Dark green background */
+            padding: 5px;  /* Internal spacing */
+            font-weight: bold;  /* Bold text */
+            text-align: center;  /* Centered text */
+            color: #00ff00;  /* Bright green text */
         }
+        
         .table_menu .menu-col {
-            width: 150px;
-            font-weight: bold;
+            /* Styles the menu column (the left column with category names) */
+            width: 150px;  /* Makes this column 150 pixels wide */
+            font-weight: bold;  /* Makes the text bold */
+        }
+        
+        .table_menu .menu-col a {
+            /* Styles the links in the menu column */
+            text-decoration: underline;  /* Adds underline to menu links */
         }
         .table_update {
-            width: 100%;
-            border: 1px solid #00ff00;
-            border-collapse: collapse;
+            /* This styles the "Recent Updates" table */
+            width: 100%;  /* Full width */
+            border: 1px solid #00ff00;  /* Green border */
+            border-collapse: collapse;  /* Merged borders */
         }
+        
         .table_update td {
-            padding: 8px;
-            border-bottom: 1px solid #004400;
+            /* Styles each cell in the updates table */
+            padding: 8px;  /* Internal spacing */
+            border-bottom: 1px solid #004400;  /* Dark green line under each row */
         }
+        
         .table_update .table-title {
-            background-color: #003300;
-            padding: 5px;
-            font-weight: bold;
-            text-align: center;
-            color: #00ff00;
+            /* Styles the "Recent Updates" title row */
+            background-color: #003300;  /* Dark green background */
+            padding: 5px;  /* Internal spacing */
+            font-weight: bold;  /* Bold text */
+            text-align: center;  /* Centered */
+            color: #00ff00;  /* Bright green text */
         }
+        
         .table_update .new { color: #ff0000; width: 100px; }
+        /* Styles dates marked as "new" - red color, 100 pixels wide */
+        
         .table_update .next { color: #ffff00; width: 100px; }
+        /* Styles dates marked as "next" - yellow color, 100 pixels wide */
+        
         .table_update .old { color: #888888; width: 100px; }
+        /* Styles dates marked as "old" - gray color, 100 pixels wide */
+        
+        .table_update a {
+            /* Styles links in the Recent Updates table */
+            text-decoration: underline;  /* Adds underline to update links */
+        }
+        
         .table_update .journal, .table_menu .journal { width: 120px; color: #00ff00; }
+        /* Styles "journal" category - green color, 120 pixels wide */
+        
         .table_update .dreams, .table_menu .dreams { width: 120px; color: #00ffaa; }
+        /* Styles "dreams" category - turquoise color, 120 pixels wide */
+        
         .table_update .testimonies, .table_menu .testimonies { width: 120px; color: #aaffaa; }
+        /* Styles "testimonies" category - light green color, 120 pixels wide */
         .counter {
-            text-align: center;
-            margin: 20px 0;
-            font-family: "Courier New", Courier, monospace;
-            font-size: 20px;
-            color: #00ff00;
-            border: 1px dashed #00ff00;
-            padding: 5px;
-            background-color: #001100;
+            /* This styles the visitor counter box */
+            text-align: center;  /* Centers the text */
+            margin: 20px 0;  /* Adds 20 pixels of space above and below */
+            font-family: "Courier New", Courier, monospace;  /* Typewriter font */
+            font-size: 20px;  /* Makes text 20 pixels tall */
+            color: #00ff00;  /* Bright green text */
+            border: 1px dashed #00ff00;  /* Dashed green border (dotted line) */
+            padding: 5px;  /* Internal spacing */
+            background-color: #001100;  /* Very dark green background */
         }
+        
         footer {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 14px;
-            color: #999999;
-            border-top: 1px solid #333333;
-            padding-top: 20px;
+            /* This styles the footer (bottom section of the page) */
+            margin-top: 40px;  /* Adds 40 pixels of space above the footer */
+            text-align: center;  /* Centers everything in the footer */
+            font-size: 14px;  /* Smaller text size (14 pixels) */
+            color: #999999;  /* Gray text color */
+            border-top: 1px solid #333333;  /* Dark gray line above the footer */
+            padding-top: 20px;  /* Adds 20 pixels of space above the footer content */
         }
+        
         .ascii {
-            white-space: pre;
-            line-height: 1.2;
-            font-family: monospace;
-            text-align: center;
-            color: #00ff00;
-            margin: 20px 0;
+            /* This styles the ASCII art section (where your fancy text appears) */
+            white-space: pre;  /* Preserves spacing and line breaks exactly as typed */
+            line-height: 1.2;  /* Makes lines closer together */
+            font-family: monospace;  /* Typewriter-style font */
+            text-align: center;  /* Centers the content */
+            color: #00ff00;  /* Bright green color */
+            margin: 20px 0;  /* Adds space above and below */
         }
+        
         .ascii h1, .ascii h2 {
-            font-weight: bold;
-            outline: 2px solid rgba(14, 14, 14, 0.014);
-            outline-offset: 4px;
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 6px;
+            /* Styles headings inside the ASCII section */
+            font-weight: bold;  /* Makes text bold */
+            outline: 2px solid rgba(14, 14, 14, 0.014);  /* Adds a subtle outline */
+            outline-offset: 4px;  /* Moves the outline 4 pixels away from the text */
+            display: inline-block;  /* Allows the outline to work properly */
+            padding: 4px 12px;  /* Adds spacing inside the heading box */
+            border-radius: 6px;  /* Rounds the corners slightly */
         }
+        
         .ascii h2 {
-            text-decoration: underline;
+            /* Styles h2 headings in the ASCII section */
+            text-decoration: none;  /* Removes the underline */
         }
+        
         footer a.inspired {
-            color: orange;
+            /* Styles the "Inspired From" link in the footer */
+            color: orange;  /* Makes it orange */
         }
     </style>
+    <!-- End of the style section - all design instructions are done -->
 </head>
-<body>
-    <div class="title">
-        <img src="D:\Master Folder\Website\folder_01\index_pics\eyesbackground.gif" alt="Animated GIF" style="width: 812px; height: 300px;" />
-    </div>
-    <div class="ascii">
+<!-- End of the HEAD section -->
 
-    <h1>𝑀𝓎 𝒶𝓃𝑜𝓃𝓎𝓂𝑜𝓊𝓈 𝑒𝓃𝓉𝓇𝒾𝑒𝓈</h1>
-    <h2>[𝓂𝒶𝒾𝓃𝓁𝓎 𝒻𝑜𝓇 <i>𝒞𝒽𝓇𝒾𝓈𝓉</i>]</h2>
-        <img src="D:\Master Folder\Website\folder_01\index_pics\welcomesign.jpg" alt="Welcome Sign" style="width: 375px; height: auto;" />
+<body>
+<!-- The BODY section contains all the visible content that visitors see on the webpage -->
+    
+    <div class="title">
+    <!-- A DIV is like a box that holds content. "class=title" applies the .title styling -->
+        <!-- The animated GIF is now set as the page background with 60% opacity -->
     </div>
+    
+    <div class="ascii">
+    <!-- Another box that holds the ASCII art section -->
+
+    <!-- H1 = heading level 1 (main heading, largest) -->
+    <h1>𝑀𝓎 𝒶𝓃𝑜𝓃𝓎𝓂𝑜𝓊𝓈 𝑒𝓃𝓉𝓇𝒾𝑒𝓈</h1>
+    
+    <!-- H2 = heading level 2 (subheading, smaller than h1) -->
+    <!-- I tag makes text italic (slanted) -->
+    <h2>𝖆𝖘 𝖆 𝖋𝖔𝖑𝖑𝖔𝖜𝖊𝖗 𝖔𝖋 <i>𝕮𝖍𝖗𝖎𝖘𝖙...</i></h2>
+    
+    <!-- Another image - the welcome sign -->
+    <!-- height: auto means the height adjusts automatically to keep proportions -->
+        <img src="folder_01/index_pics/welcomesign.jpg" alt="Welcome Sign" style="width: 375px; height: auto;" />
+    </div>
+    <!-- End of the ASCII section -->
+    
+    <!-- TABLE creates a table (like a spreadsheet with rows and columns) -->
     <table class="table_base">
+        <!-- TR = table row (horizontal row) -->
         <tr>
+            <!-- TD = table data (individual cell) -->
             <td>
-                <span class="blink">★</span> Welcome to my semi-annonymous website <span class="blink">★</span><br />
+                <!-- SPAN is like a small box around specific text -->
+                <!-- class="blink" makes the stars blink on and off -->
+                <span class="blink">✝</span> Welcome to my Christian annonymous website <span class="blink">✝</span>
+                <!-- BR = line break (starts a new line) -->
+                <br />
                 <span style="color: lightgreen;">
+                <!-- style="color: lightgreen;" makes text light green (but this span is empty) -->
                 </span>
             </td>
         </tr>
     </table>
-    <div class="counter">
-        Visitors: <span id="visitor-count">1388</span>
-    </div>
+    <!-- End of welcome message table -->
+    <!-- Visitor counter box -->
+   
+    
+    <!-- Table showing recent updates/posts -->
     <table class="table_update">
         <tr>
+            <!-- colspan="3" means this cell spans across 3 columns (combines 3 cells into 1) -->
             <td class="table-title" colspan="3">Recent Updates</td>
         </tr>
+        <!-- Each TR below is a row showing one update -->
         <tr>
+            <!-- Date column - class="new" makes it red -->
             <td class="new">05/24/2025</td>
+            <!-- Category column - class="testimonies" makes it light green -->
             <td class="testimonies">News</td>
+            <!-- Link column - A tag creates a clickable link -->
+            <!-- href tells the browser which page to go to when clicked -->
             <td><a href="folder_01/news/news01.html">Why I'm making this website</a></td>
         </tr>
         <tr>
+            <!-- class="next" makes the date yellow -->
             <td class="next">00/00/0000</td>
+            <!-- class="dreams" makes it turquoise -->
             <td class="dreams">Other</td>
             <td><a href="entry2.html">Coming soon...</a></td>
         </tr>
         <tr>
+            <!-- class="old" makes the date gray -->
             <td class="old">00/00/0000</td>
+            <!-- class="journal" makes it green -->
             <td class="journal">Other</td>
             <td><a href="entry3.html">Coming soon...</a></td>
         </tr>
@@ -186,14 +329,23 @@
             <td><a href="entry4.html">Coming soon...</a></td>
         </tr>
     </table>
+    <!-- End of Recent Updates table -->
+    <!-- BR adds a blank line (spacing) -->
     <br />
+    
+    <!-- Navigation menu table -->
     <table class="table_menu">
         <tr>
+            <!-- Title row spans all 3 columns -->
             <td class="table-title" colspan="3">Menu</td>
         </tr>
+        <!-- Each TR is a menu item with: empty cell, category link, description -->
         <tr>
+            <!-- Empty cell for spacing -->
             <td></td>
+            <!-- Menu column with the category name link -->
             <td class="menu-col"><a href="api/categories/testimonies/entries">Testimonies</a></td>
+            <!-- Description column explaining what this category is about -->
             <td>Stories of faith and divine intervention in my life</td>
         </tr>
         <tr>
@@ -212,60 +364,94 @@
             <td>Things that spark joy and wonder in my spiritual journey</td>
         </tr>
     </table>
+    <!-- End of Menu table -->
     <br />
 
+    <!-- "About this site" information table -->
     <table class="table_base">
         <tr>
+            <!-- Title cell -->
             <td class="table-title">about this site</td>
         </tr>
         <tr>
             <td>
-                Welcome to my digital sanctuary—a personal Christian blog where faith meets dreamcore aesthetics. 
-                This space is dedicated to sharing spiritual journeys, divine encounters, and the mysterious ways 
-                God works in our lives. Here you'll find:
+                <!-- Regular paragraph text -->
+                This site is a faith-centered space documenting my walk with Christ—testimonies, thoughts, and reflections<br/>
+                Here you'll find:
+                <!-- UL = unordered list (bulleted list) -->
                 <ul>
-                    <li><a href="api/categories/beliefs/entries" style="color: rgb(255, 0, 0);">What I believe in</a>   +    +    <a href="api/categories/beliefs/entries" style="color: rgb(0, 4, 255);">My testimony</a> </li>
-                    <li>Personal testimonies of faith and divine intervention</li>
+                    <!-- LI = list item (each bullet point) -->
+                    <!-- style="color: rgb(255, 0, 0);" makes text red (RGB = Red Green Blue, 255,0,0 is pure red) -->
+                    <!-- style="color: rgb(0, 4, 255);" makes text blue -->
+                    <li><a href="api/categories/beliefs/entries" style="color: rgb(255, 137, 3); text-decoration: underline;">My testimony of how I came to know Christ</a> </li>
+                    <li>Testimonies of faith and divine intervention (mine and others)</li>
                     <li>Spiritual reflections and growth insights</li>
                     <li>Random Dreams, thoughts, and experiences</li>
-                    <li>Content that inspires wonder and spiritual awakening</li>
-                    <li>A retro aesthetic that honors early web design</li>
+                    <li>Content that will spark your curiosity</li>
                 </ul>
+                
+                <!-- SPAN with inline style to make this text yellow -->
                 <span style="color: yellow;">
-                    This site is a living testimony, constantly evolving as I document my spiritual journey 
+                    This site is a living testimony, constantly evolving as I share my spiritual journey 
                     and share the light I've found in Christ.
                 </span>
             </td>
         </tr>
     </table>
+    <!-- End of About section -->
     <br />
+    
+    <!-- Favorite Scripture table -->
     <table class="table_base">
         <tr>
             <td class="table-title">Current Fav Scripture</td>
         </tr>
         <tr>
             <td>
+                <!-- P = paragraph (regular text block) -->
+                <!-- style="color: aquamarine;" makes the text aquamarine (light blue-green) -->
                 <p style="color: aquamarine;">
-                    John 3:36 Whoever believes in the Son has eternal life, but whoever rejects the Son will not see
-                    life, for God’s wrath remains on them.
+                    Habakkuk 1:5 “Look among the nations, and see; wonder and be astounded. For I am doing a work in your days that you would not believe if told. .
                 </p>
             </td>
         </tr>
     </table>
+    <!-- End of Scripture section -->
+    
+    <!-- FOOTER = bottom section of the page -->
     <footer>
         <p>
+            <!-- © = copyright symbol -->
             © 2025-2025 |
+            <!-- mailto: creates a link that opens email when clicked -->
             <a href="mailto:pxavierpriv2006@proton.me">Contact</a>
-            <a href="/folder_01/bottom_links/supportme.html">Support-Me</a>
-            <a href="https://alf-s-room.com/" class="inspired">Inspired From</a>
+            <!-- class="inspired" makes it orange -->
+            <a href="https://alf-s-room.com/" class="inspired" target="_blank">Inspired From</a>
         </p>
     </footer>
+    <!-- End of footer -->
+    <!-- SCRIPT section contains JavaScript code that makes the page interactive -->
     <script>
-        // Simple visitor counter that increments each time
+        // JavaScript is a programming language that makes web pages do things automatically
+        
+        // Simple visitor counter that increments each time someone visits
+        // localStorage is like a tiny database stored in the visitor's browser
+        // getItem("visitorCount") tries to get the saved count number
+        // || 244 means "if nothing is saved yet, start with 244"
         let count = localStorage.getItem("visitorCount") || 244;
+        
+        // parseInt converts the count to a number and adds 1 to it
         count = parseInt(count) + 1;
+        
+        // setItem saves the new count back to localStorage so it's remembered
         localStorage.setItem("visitorCount", count);
+        
+        // document.getElementById finds the element with id="visitor-count" (the number display)
+        // textContent changes what text is shown inside that element to the new count
         document.getElementById("visitor-count").textContent = count;
     </script>
+    <!-- End of JavaScript code -->
 </body>
+<!-- End of BODY section (all visible content is done) -->
 </html>
+<!-- End of the entire HTML document -->
