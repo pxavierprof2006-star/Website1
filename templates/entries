@@ -1,24 +1,44 @@
 <!DOCTYPE html>
+<!-- This tells the browser this is an HTML5 document -->
+
 <html>
+<!-- This is the opening tag for the entire webpage -->
 
 <head>
+<!-- The HEAD section contains information ABOUT the webpage -->
+<!-- This includes the title and styling instructions -->
+
   <title>5/24/2025</title>
+  <!-- This is the text that appears in the browser tab at the top of the window -->
+  <!-- This appears to be a date for when the entry was written -->
+  
   <style>
+  /* The STYLE section contains visual design instructions */
     body {
-      background-color: black;
-      color: lime;
-      font-family: monospace;
+      /* This styles the entire body (main content area) of the webpage */
+      background-color: black;  /* Sets background to black */
+      color: lime;  /* Sets text color to lime green */
+      font-family: monospace;  /* Uses a typewriter-style font (like old computer screens) */
     }
   </style>
+  <!-- End of the style section -->
 </head>
+<!-- End of the HEAD section -->
 
 <body>
+<!-- The BODY section contains all the visible content that visitors see -->
 
   <h1>Date</h1>
+  <!-- H1 = heading level 1 (main heading, largest text) -->
+  <!-- This is where you would put the date of your journal entry -->
 
   <p>paragraph here</p>
+  <!-- P = paragraph (regular text block) -->
+  <!-- This is where you would write the content of your journal entry -->
 
 
 </body>
+<!-- End of BODY section (all visible content is done) -->
 
 </html>
+<!-- End of the entire HTML document -->
