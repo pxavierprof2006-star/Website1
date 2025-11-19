@@ -1,26 +1,19 @@
 <!doctype html>
 <!-- This tells the browser this is an HTML5 document (the latest version of HTML) -->
-
 <html lang="en">
 <!-- This is the opening tag for the entire webpage. "lang=en" means the page is in English -->
-
 <head>
 <!-- The HEAD section contains information ABOUT the webpage that visitors don't see directly -->
-<!-- This includes the title, styling instructions, and metadata -->
-
+<!-- This includes the title, styling instructions, and metadata --
     <meta charset="UTF-8" />
-    <!-- This tells the browser what character encoding to use (so special characters display correctly) -->
-    
+    <!-- This tells the browser what character encoding to use (so special characters display correctly) -->  
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- This makes the website work properly on mobile phones and tablets -->
     <!-- It tells mobile browsers to make the page fit the screen width -->
-    
     <meta name="description" content="XS-Testimony - A Christian anonymous website documenting my walk with Christ" />
     <!-- This description shows up when someone searches for your website on Google -->
-    
     <title>XS-Testimony</title>
     <!-- This is the text that appears in the browser tab at the top of the window -->
-    
     <style>
     /* The STYLE section contains all the visual design instructions for the webpage */
     /* This is where we tell the browser what colors, fonts, sizes, and animations to use */
@@ -179,6 +172,13 @@
         .table_update .old { color: #888888; width: 100px; }
         /* Styles dates marked as "old" - gray color, 100 pixels wide */
         
+        .table_update .new,
+        .table_update .next,
+        .table_update .old {
+            /* Styles the date cells in the Recent Updates table */
+            animation: blink-animation 1s steps(5, start) infinite;  /* Makes dates blink */
+        }
+        
         .table_update a {
             /* Styles links in the Recent Updates table */
             text-decoration: underline;  /* Adds underline to update links */
@@ -250,28 +250,23 @@
 
 <body>
 <!-- The BODY section contains all the visible content that visitors see on the webpage -->
-    
     <div class="title">
     <!-- A DIV is like a box that holds content. "class=title" applies the .title styling -->
         <!-- The animated GIF is now set as the page background with 60% opacity -->
     </div>
-    
+
     <div class="ascii">
     <!-- Another box that holds the ASCII art section -->
-
     <!-- H1 = heading level 1 (main heading, largest) -->
     <h1>𝑀𝓎 𝒶𝓃𝑜𝓃𝓎𝓂𝑜𝓊𝓈 𝑒𝓃𝓉𝓇𝒾𝑒𝓈</h1>
-    
     <!-- H2 = heading level 2 (subheading, smaller than h1) -->
     <!-- I tag makes text italic (slanted) -->
     <h2>𝖆𝖘 𝖆 𝖋𝖔𝖑𝖑𝖔𝖜𝖊𝖗 𝖔𝖋 <i>𝕮𝖍𝖗𝖎𝖘𝖙...</i></h2>
-    
     <!-- Another image - the welcome sign -->
     <!-- height: auto means the height adjusts automatically to keep proportions -->
         <img src="folder_01/index_pics/welcomesign.jpg" alt="Welcome Sign" style="width: 375px; height: auto;" />
     </div>
     <!-- End of the ASCII section -->
-    
     <!-- TABLE creates a table (like a spreadsheet with rows and columns) -->
     <table class="table_base">
         <!-- TR = table row (horizontal row) -->
@@ -280,7 +275,8 @@
             <td>
                 <!-- SPAN is like a small box around specific text -->
                 <!-- class="blink" makes the stars blink on and off -->
-                <span class="blink">✝</span> Welcome to my Christian annonymous website <span class="blink">✝</span>
+                <span class="blink">✝</span> Welcome to my Christian annonymous website 
+                ”whatever you do, do it all for the glory of God” <span class="blink">✝</span>
                 <!-- BR = line break (starts a new line) -->
                 <br />
                 <span style="color: lightgreen;">
@@ -293,13 +289,29 @@
     <!-- Visitor counter box -->
    
     
+    <!-- New table with 5 columns and 1 row -->
+    <table class="table_update" style="margin-left: auto; margin-right: auto; text-align: center; background-color: #001900;">
+        <tr>
+            <td style="text-align: center;"><a href="about.html" style="color: green; text-decoration: none;">About me</a></td>
+            <td style="width:10px; background-color: #003300;"></td>
+            <td style="text-align: center;"><a href="column2.html" style="color: green; text-decoration: none;">Testimony</a></td>
+            <td style="width:10px; background-color: #003300;"></td>
+            <td style="text-align: center;"><a href="column3.html" style="color: green; text-decoration: none;">Productive Content</a></td>
+            <td style="width:10px; background-color: #003300;"></td>
+            <td style="text-align: center;"><a href="column4.html" style="color: green; text-decoration: none;">Column 4</a></td>
+            <td style="width:10px; background-color: #003300;"></td>
+            <td style="text-align: center;"><a href="column5.html" style="color: green; text-decoration: none;">Column 5</a></td>
+        </tr>
+    </table>
+    <br />
+    
     <!-- Table showing recent updates/posts -->
     <table class="table_update">
         <tr>
-            <!-- colspan="3" means this cell spans across 3 columns (combines 3 cells into 1) -->
-            <td class="table-title" colspan="3">Recent Updates</td>
+            <td colspan="3" style="background-color: #014a01; color: #00ff00; text-align: center; font-weight: bold;">
+                Recent updates
+            </td>
         </tr>
-        <!-- Each TR below is a row showing one update -->
         <tr>
             <!-- Date column - class="new" makes it red -->
             <td class="new">05/24/2025</td>
@@ -365,7 +377,7 @@
         </tr>
         <tr>
             <td></td>
-            <td class="menu-col"><a href="api/categories/all/entries">All entries</a></td>
+            <td class="menu-col"><a href="api\categories\all\entries.html">All entries</a></td>
             <td>All entries in one place</td>
         </tr>
     </table>
